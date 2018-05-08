@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+  
+    <title>title</title>
+</head>
+
+<body>
+    <div id="weather-data">
+        <div class="row">
+            <div class="col-md-10 offset-md-1">
+                <div class="page-header">
+                    <h1>Weather Chat</h1>
+                    <form>
+                        <div class="form-group">
+                            <div class="row">
+                            <input type="text" id="input-city" class="form-control col-md-10" placeholder="Enter City">
+                            <button type="button" class="btn-get-temp btn-primary col-md-2">Get Temp</button>
+                        </div>
+                    </div>
+                    </form>
+
+                    <hr>
+                    <div class="post-container">
+                        <!--#############################handlebars#####################################3-->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script id="post-tamplate" type="text/x-handlebars-template">
+        <div class="post" data-id="{{id}}">
+                <div class="row">
+                        <h1 class="city-name col-md-11">{{city}}</h1>
+                <button class="btn-sm remove"><span class="fa fa-trash"></span></button>
+                </div>
+                <p class="temprature">{{temprature}}&degC at {{date}}</p>
+               
+                <div class="row">
+                <input type="text" id="input-comment" class="form-control col-md-9 offset-md-1 " placeholder="comment">
+                <button type="button" class="add-comment btn-primary">Comment</button>
+            </div>
+                <div class="comments-container">
+                    <!--#############################handlebars#####################################3-->
+                </div>
+            </div>
+        </div>    
+    </script>
+
+
+    <script id="comment-tamplate" type="text/x-handlebars-template">
+            <p class="comment">{{text}}</p>
+    </script>
+
+
+    <script type="text/javascript" src="jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="handlebars/dist/handlebars.min.js"></script>
+    <script type="module" src="main.js"></script>
+
+</body>
+
+</html>
